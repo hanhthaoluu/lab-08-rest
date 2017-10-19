@@ -6,9 +6,9 @@ const uuid = require('uuid/v1');
 class Note {
   constructor(title, date, content) {
     this.id = uuid(); //uuid is a global scope...this is why I don't need to pass in the parameter inside the constructor like 'title', 'date', 'content'
-    this.title = title;
-    this.date = date;
-    this.content = content;
+    this.title = config.title || '';
+    this.createdOn = new Date();
+    this.content = config.content || '';
   }
 
   //instance (prototype) methods
